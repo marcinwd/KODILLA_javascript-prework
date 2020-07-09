@@ -1,4 +1,5 @@
 
+//FUNCIONS
 function getMoveName(argMoveId){
     if(argMoveId == 1){
       return 'kamień';
@@ -12,65 +13,56 @@ function getMoveName(argMoveId){
     return 'nieznany ruch';
   }
 
+  function displayResult(argComputerMove, argPlayerMove){
+    console.log('moves:', argComputerMove, argPlayerMove);
+    if(argComputerMove == 'papier' && argPlayerMove == 'papier'){
+        printMessage('REMIS');
+    } else if (argComputerMove == 'papier' && argPlayerMove == 'nozyce'){
+        printMessage('Ty wygrywasz');
+    } else if (argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+        printMessage('Wygrywa Komputer');
+    } else if (argComputerMove == 'nozyce' && argPlayerMove == 'papier'){
+        printMessage('Wygrywa Komputer');
+    } else if (argComputerMove == 'nozyce' && argPlayerMove == 'nozyce'){
+        printMessage('REMIS');
+    } else if (argComputerMove == 'nozyce' && argPlayerMove == 'kamień'){
+        printMessage('Ty wygrywasz');
+    }else if (argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+        printMessage('Ty wygrywasz');
+    } else if (argComputerMove == 'kamień' && argPlayerMove == 'nozyce'){
+        printMessage('Wygrywa Komputer');
+    } else if (argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
+        printMessage('REMIS');
+    } else if (argPlayerMove != 1 || argPlayerMove != 2 || argPlayerMove != 3 ){
+        printMessage('WPROWADZ LICZBE CAŁKOWITĄ W ZAKRESIE 1-3');
+    }
+ }
+ 
+
 //COMP MOVE
 let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log('Wylosowana liczba to: ' + randomNumber);
 
-let computerMove = getMoveName(randomNumber);
+let argComputerMove = getMoveName(randomNumber);
 
-/*
-if(randomNumber == 1){
-  computerMove = 'kamień';
-} else if (randomNumber == 2){
-  computerMove = 'papier';
-} else if (randomNumber == 3){
-    computerMove = 'nozyce';
-}
-*/
-
-printMessage('Mój ruch to: ' + computerMove);
+printMessage('Mój ruch to: ' + argComputerMove);
 
 //PLAYER INPUT
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nozyce.');
 
 console.log('Gracz wpisał: ' + playerInput);
 
-let playerMove =  getMoveName(playerInput);
+let argPlayerMove =  getMoveName(playerInput);
 
-/*
-if(playerInput == '1'){
-  playerMove = 'kamień';
-} else if(playerInput == '2'){
-    playerMove = 'papier';
-} else if(playerInput == '3'){
-    playerMove = 'nozyce';
-}
-*/
 
-printMessage('Twój ruch to: ' + playerMove);
+printMessage('Twój ruch to: ' + argPlayerMove);
+
+console.log('argComputerMove = ' + argComputerMove, 'argPlayerMove = ' + argPlayerMove)
 
 //GAMEplay & OUTCOME
-if(computerMove == 'papier' && playerMove == 'papier'){
-    printMessage('REMIS')
-} else if (computerMove == 'papier' && playerMove == 'nozyce'){
-    printMessage('Ty wygrywasz')
-} else if (computerMove == 'papier' && playerMove == 'kamień'){
-    printMessage('Wygrywa Komputer')
-} else if (computerMove == 'nozyce' && playerMove == 'papier'){
-    printMessage('Wygrywa Komputer')
-} else if (computerMove == 'nozyce' && playerMove == 'nozyce'){
-    printMessage('REMIS')
-} else if (computerMove == 'nozyce' && playerMove == 'kamień'){
-    printMessage('Ty wygrywasz')
-}else if (computerMove == 'kamień' && playerMove == 'papier'){
-    printMessage('Ty wygrywasz')
-} else if (computerMove == 'kamień' && playerMove == 'nozyce'){
-    printMessage('Wygrywa Komputer')
-} else if (computerMove == 'kamień' && playerMove == 'kamień'){
-    printMessage('REMIS')
-} else if (playerMove != 1 || playerMove != 2 || playerMove != 3 ){
-    printMessage('WPROWADZ LICZBE CAŁKOWITĄ W ZAKRESIE 1-3')
-}
-    
+
+displayResult(argComputerMove, argPlayerMove);
+
+
 
