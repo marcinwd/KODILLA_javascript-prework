@@ -1,0 +1,21 @@
+
+computerMove    kamień
+playerMove      kamień
+
+computerMove    kamień
+playerMove      nozyce
+
+computerMove    kamień
+playerMove      papier
+
+computerMove    papier
+playerMove      papier
+
+computerMove    papier
+playerMove      kamień
+
+computerMove    papier
+playerMove      nozyce
+
+
+

@@ -10,10 +10,15 @@ function playGame(playerInput){
         } else if (argMoveId == 3){
             return 'nozyce';
         }
-    
         printMessage('Nie znam ruchu o id ' + argMoveId + '.');
         return 'nieznany ruch';
     }
+
+    //COMP MOVE
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
+    console.log('Wylosowana liczba to: ' + randomNumber);
+    const argComputerMove = getMoveName(randomNumber);
+    printMessage('Mój ruch to: ' + argComputerMove);
 
     function displayResult(argComputerMove, argPlayerMove){
         console.log('moves:', argComputerMove, argPlayerMove);
@@ -36,29 +41,17 @@ function playGame(playerInput){
         }
     }
  
-//COMP MOVE
-    const randomNumber = Math.floor(Math.random() * 3 + 1);
 
-    console.log('Wylosowana liczba to: ' + randomNumber);
-
-    const argComputerMove = getMoveName(randomNumber);
-
-    printMessage('Mój ruch to: ' + argComputerMove);
 
 //PLAYER INPUT
-
     console.log('Gracz wpisał: ' + playerInput);
-
     const argPlayerMove =  getMoveName(playerInput);
-
-
     printMessage('Twój ruch to: ' + argPlayerMove);
-
     console.log('argComputerMove = ' + argComputerMove, 'argPlayerMove = ' + argPlayerMove)
 
 //GAMEplay & OUTCOME
 
-    displayResult(argComputerMove, argPlayerMove);
+    displayResult(argComputerMove, argPlayerMove); //NIE RUSZAC
 
 }
 //LISTENER
