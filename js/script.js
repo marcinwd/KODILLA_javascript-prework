@@ -47,7 +47,6 @@ const playGame = function(playerInput){
 //PLAYER INPUT
    
     const argPlayerMove =  getMoveName(playerInput);
-    
     printMessage('Twój ruch to: ' + argPlayerMove);
     console.log('Gracz wpisał: ' + playerInput);
     console.log('argComputerMove = ' + argComputerMove, 'argPlayerMove = ' + argPlayerMove)
